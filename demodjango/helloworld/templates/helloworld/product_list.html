@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Products </title>
+</head>
+<body>
+   <h1> Product List </h1>
+   {% if product_list %}
+   <ol>
+       {% for product in product_list %}
+        <li><a href="{{product.get_absolute_url}}"> {{ product.product_name }}</a>
+        </li>
+        {% endfor %}
+   </ol>
+   {% else %}
+   <p> Product Table is Empty..</p>
+   {% endif %}
+   <a href="http://127.0.0.1:8000/"><button> back </button></a>
+
+</body>
+</html>

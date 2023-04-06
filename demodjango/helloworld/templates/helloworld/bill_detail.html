@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill Detail</title>
+</head>
+<body>
+     <h1>
+       Customer Name : {{ bill.customer_name }}
+     </h1>
+     <table>
+       <tr>
+         <th>Products</th>
+         <th> Price </th>
+       </tr>
+       {% for product in bill.products.all %}
+       <tr>
+          <td> {{ product.product_name }}</td>
+         <td> {{ product.product_price }} </td>
+       </tr>
+       {% endfor %}
+       <tr>
+         <td> GST </td>
+         <td> 2.0 </td>
+       </tr>
+       <tr>
+         <td><b> Total Amount </b></td>
+         <td> {{ bill.total_sum }} </td>
+       </tr>
+     </table>
+     <a href="http://127.0.0.1:8000/product"><button> Back </button></a>
+</body>
+</html>
