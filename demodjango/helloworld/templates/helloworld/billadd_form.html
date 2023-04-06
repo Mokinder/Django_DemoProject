@@ -5,6 +5,13 @@
     <title>Bill</title>
 </head>
 <body>
+<form action="" method="POST">
+        {% csrf_token %}
+          <table>
+              {{ form.as_table }}
+          </table>
+          <input type="submit" value="Submit">
+      </form>
 <a href="http://127.0.0.1:8000/product/"><button> Back </button></a>
 </body>
 </html>
